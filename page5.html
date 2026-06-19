@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Last Thing ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050816;
+    color:white;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+    transition:1.5s;
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+    background-size:50px 50px;
+    opacity:.25;
+    z-index:0;
+}
+
+.fade-out{
+    opacity:0;
+}
+
+/* INTRO SCREEN */
+
+#introScreen{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    z-index:2;
+}
+
+#introScreen h1{
+    font-size:4rem;
+    margin-bottom:30px;
+}
+
+#introScreen p{
+    font-size:1.3rem;
+    color:#cbd5e1;
+    line-height:1.8;
+    max-width:700px;
+}
+
+.read-btn{
+    margin-top:50px;
+    padding:18px 45px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:.3s;
+    animation:floatButton 3s ease-in-out infinite;
+}
+
+.read-btn:hover{
+    transform:scale(1.08);
+    box-shadow:
+    0 0 20px #ff4d6d,
+    0 0 40px #ff4d6d,
+    0 0 60px #ff4d6d;
+}
+
+/* LETTER SCREEN */
+
+#letterScreen{
+    display:none;
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    margin:auto;
+    padding:80px 30px;
+    animation:fadeIn 2s ease;
+}
+
+#letterScreen h1{
+    text-align:center;
+    font-size:4rem;
+    margin-bottom:40px;
+}
+
+.letter{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:40px;
+    line-height:2;
+    font-size:1.1rem;
+}
+
+.letter p{
+    margin-bottom:12px;
+}
+
+.end{
+    text-align:center;
+    margin-top:50px;
+    font-size:1.5rem;
+    color:#ff8fab;
+}
+
+.finish{
+    display:block;
+    margin:50px auto;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.finish:hover{
+    transform:scale(1.05);
+    box-shadow:
+    0 0 20px #ff4d6d,
+    0 0 40px #ff4d6d;
+}
+
+#finalMessage{
+    display:none;
+    text-align:center;
+    margin-top:50px;
+    font-size:1.4rem;
+    color:#ff8fab;
+    animation:fadeIn 2s ease;
+    line-height:2;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes floatButton{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- INTRO SCREEN -->
+
+<div id="introScreen">
+
+<h1>💌 One Last Thing...</h1>
+
+<p>
+Before you continue...
+<br><br>
+This page means a little more than the others.
+<br><br>
+So take a moment.
+<br>
+And read it when you're ready.
+</p>
+
+<button class="read-btn" onclick="showLetter()">
+Read It ➜
+</button>
+
+</div>
+
+<!-- LETTER SCREEN -->
+
+<div id="letterScreen">
+
+<h1>💌 One Last Thing...</h1>
+
+<div class="letter">
+
+<p>💌 HEY COOKIE 💌</p>
+
+<p>
+Well... where do I even start? 🥹❤️
+</p>
+
+<p>
+It honestly hasn't been that long since we met on that random day in Brookhaven 🏡✨, but somehow it feels like you've been a part of my life for way longer than that 😭💖.
+</p>
+
+<p>
+It's only been a little over a month ⏳, yet this tiny friendship of ours somehow grew into something that became one of the best parts of my day 🌸❤️.
+</p>
+
+<p>
+And honestly? 🥹
+</p>
+
+<p>
+I'm genuinely grateful that I met you 💕.
+</p>
+
+<p>
+It's funny because most people join Brookhaven to roleplay 🎭🏡 and do all sorts of random stuff 🤣.
+</p>
+
+<p>
+But us? 😭
+</p>
+
+<p>
+We literally joined, found each other 👀✨, talked for hours 🗣️💬, laughed at the dumbest things 😂, annoyed each other 😤, argued over nonsense 🙄, and then left 💀.
+</p>
+
+<p>
+No roleplays 🚫🎭.
+</p>
+
+<p>
+No crazy adventures 🚫⚔️.
+</p>
+
+<p>
+Just us talking 💬❤️.
+</p>
+
+<p>
+And somehow those random conversations became some of my favorite memories 🥹✨.
+</p>
+
+<p>
+I loved how we were happy together most of the time 🌷💖.
+</p>
+
+<p>
+I loved our little fights 😭⚔️.
+</p>
+
+<p>
+I loved it when you got mad at me over the tiniest things 😤🐦.
+</p>
+
+<p>
+You literally turned into a tiny angry bird sometimes 😭😂❤️.
+</p>
+
+<p>
+And if I'm being honest... 🤭
+</p>
+
+<p>
+Sometimes I kept doing things just to make you mad because your reactions were way too funny 😭🤣.
+</p>
+
+<p>
+I know, I'm a menace 💀❤️.
+</p>
+
+<p>
+I loved all the times we shipped each other 😭💕.
+</p>
+
+<p>
+I loved all our random inside jokes 😂✨.
+</p>
+
+<p>
+I loved those late-night talks 🌙💬 where we'd somehow go from one topic to another and keep talking for hours 😭❤️.
+</p>
+
+<p>
+Those conversations never felt boring 🥹.
+</p>
+
+<p>
+Not even once.
+</p>
+
+<p>
+No matter what we talked about, I always found myself looking forward to the next conversation 💕✨.
+</p>
+
+<p>
+Thank you for trusting me 🫂❤️.
+</p>
+
+<p>
+Thank you for sharing things about yourself 💭🌸.
+</p>
+
+<p>
+Thank you for letting me be someone you could talk to 🥹💖.
+</p>
+
+<p>
+That trust means more to me than you'll probably ever realize ❤️.
+</p>
+
+<p>
+And I promise I'd never do anything to break it 🤝✨.
+</p>
+
+<p>
+Now things are changing 😭💔.
+</p>
+
+<p>
+You'll be spending less time on Roblox 🎮 and focusing more on your studies 📚✨ and your future 🌟.
+</p>
+
+<p>
+And honestly? 🥹
+</p>
+
+<p>
+I'm really proud of you ❤️.
+</p>
+
+<p>
+Of course I'm sad 😭.
+</p>
+
+<p>
+Of course I'll miss seeing your name online 💔🎮.
+</p>
+
+<p>
+Of course I'll miss our random conversations 💬.
+</p>
+
+<p>
+Our silly arguments 😭.
+</p>
+
+<p>
+Our shipping jokes 🤣❤️.
+</p>
+
+<p>
+And all those little moments that somehow became a part of my everyday life 🌸✨.
+</p>
+
+<p>
+But at the same time, I'm happy 🥹❤️.
+</p>
+
+<p>
+Because I got to experience them with you 💖.
+</p>
+
+<p>
+You'll always be a special person to me, Cookie 🍪❤️.
+</p>
+
+<p>
+Thank you for every conversation 💬.
+</p>
+
+<p>
+Thank you for every laugh 😂.
+</p>
+
+<p>
+Thank you for every late-night talk 🌙.
+</p>
+
+<p>
+Thank you for every argument 😭.
+</p>
+
+<p>
+Thank you for every memory 📸✨.
+</p>
+
+<p>
+And most importantly...
+</p>
+
+<p>
+Thank you for being you 🥹❤️.
+</p>
+
+<p>
+No matter where life takes you 🌍✨, I hope you achieve every goal you've set for yourself 📚🌟.
+</p>
+
+<p>
+I hope you're successful 🏆.
+</p>
+
+<p>
+I hope you're happy 🌸.
+</p>
+
+<p>
+And I hope life gives you everything you've worked so hard for ❤️.
+</p>
+
+<p>
+And maybe one day, years from now ⏳✨, you'll randomly remember Brookhaven 🏡💭.
+</p>
+
+<p>
+Maybe you'll remember all the random conversations 😭💬.
+</p>
+
+<p>
+Maybe you'll remember the silly fights 😤❤️.
+</p>
+
+<p>
+Maybe you'll remember the shipping jokes 🤣💕.
+</p>
+
+<p>
+And if you do...
+</p>
+
+<p>
+I hope you'll remember that there was someone on the other side of the screen 🖥️❤️ who was truly grateful that a random day in a random game led to meeting you 🥹✨.
+</p>
+
+<p style="text-align:center;font-size:1.8rem;margin-top:30px;">
+🍪❤️✨
+</p>
+<div class="end">
+See you around, Cookie. ❤️
+</div>
+
+<button class="finish" onclick="showFinalMessage()">
+✨ The End
+</button>
+
+<div id="finalMessage">
+Thank you for reading my little corner of us.
+<br><br>
+And thank you for being the biggest part of it. ❤️
+</div>
+
+</div>
+
+
+</div>
+
+<script>
+
+function showLetter(){
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+
+        document.getElementById("introScreen").style.display = "none";
+
+        document.getElementById("letterScreen").style.display = "block";
+
+        document.body.classList.remove("fade-out");
+
+    }, 1200);
+
+}
+
+function showFinalMessage(){
+
+    document.getElementById("finalMessage").style.display = "block";
+
+    document.querySelector(".finish").style.display = "none";
+
+}
+
+</script>
+
+</body>
+</html>

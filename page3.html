@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Things I Admire About You ✨</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:#050816;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    padding:60px 20px;
+    transition:1.5s;
+    overflow-x:hidden;
+}
+
+.fade-out{
+    opacity:0;
+}
+
+h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#cbd5e1;
+    margin-bottom:60px;
+    font-size:1.15rem;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    width:260px;
+    height:180px;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+.card-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transition:transform .8s;
+    transform-style:preserve-3d;
+}
+
+.card.flipped .card-inner{
+    transform:rotateY(180deg);
+}
+
+.front,
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    backface-visibility:hidden;
+}
+
+.front{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+
+    font-size:1.3rem;
+}
+
+.back{
+    background:#ff4d6d;
+    transform:rotateY(180deg);
+    line-height:1.6;
+    font-size:.95rem;
+}
+
+/* BUTTON */
+
+.continue{
+    margin-top:70px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    animation:floatButton 3s ease-in-out infinite;
+}
+
+.continue:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 20px #ff4d6d,
+    0 0 40px #ff4d6d,
+    0 0 60px #ff4d6d;
+}
+
+@keyframes floatButton{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>✨ Things I Admire About You</h1>
+
+<p class="subtitle">
+Sometimes it's the little things that leave the biggest impression.
+Click each card ❤️
+</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-inner">
+<div class="front">🌸 Your Kindness</div>
+<div class="back">
+You have a way of making people feel comfortable without even trying.
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-inner">
+<div class="front">😂 Your Humor</div>
+<div class="back">
+You can turn an ordinary day into a memorable one with a dum joke.
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-inner">
+<div class="front">🌙 Your Presence</div>
+<div class="back">
+Some people are loud and unforgettable. You are crazy and unforgettable.
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-inner">
+<div class="front">💫 The Little Things</div>
+<div class="back">
+The way you laugh. The way you tell stories. The way you make moments lighter.
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-inner">
+<div class="front">✨ Being You</div>
+<div class="back">
+The best thing about you is that you never try to be anyone else.
+</div>
+</div>
+</div>
+
+</div>
+
+<button class="continue" onclick="nextPage()">
+Continue ➜
+</button>
+
+<script>
+
+const cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+card.addEventListener("click",()=>{
+
+card.classList.toggle("flipped");
+
+});
+
+});
+
+function nextPage(){
+
+document.body.classList.add("fade-out");
+
+setTimeout(()=>{
+
+window.location.href="page4.html";
+
+},1500);
+
+}
+
+</script>
+
+</body>
+</html>

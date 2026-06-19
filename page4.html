@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Little Things 🌙</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050816;
+    color:white;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+    transition:1.5s;
+}
+
+.fade-out{
+    opacity:0;
+}
+
+.hero{
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:1.2rem;
+}
+
+.section{
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s ease;
+}
+
+.section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.text{
+
+    max-width:700px;
+
+    font-size:2rem;
+
+    line-height:1.8;
+}
+
+.highlight{
+    color:#ff8fab;
+}
+
+.last{
+    min-height:100vh;
+}
+
+.continue{
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    animation:floatButton 3s ease-in-out infinite;
+}
+
+.continue:hover{
+
+    box-shadow:
+    0 0 20px #ff4d6d,
+    0 0 40px #ff4d6d;
+}
+
+@keyframes floatButton{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>🌙 The Little Things</h1>
+
+<p>
+Sometimes it's the smallest things that stay with us the longest.
+</p>
+
+</div>
+
+<div class="section">
+<div class="text">
+The way you laugh when something is genuinely funny.
+</div>
+</div>
+
+<div class="section">
+<div class="text">
+The way you tell stories and somehow make every detail interesting.
+</div>
+</div>
+
+<div class="section">
+<div class="text">
+The way a random message from you can completely change the mood of a day.
+</div>
+</div>
+
+<div class="section">
+<div class="text">
+The way you don't even realize how much you mean to the people around you.
+</div>
+</div>
+
+<div class="section">
+<div class="text">
+Funny how the <span class="highlight">smallest things</span> often become the most memorable.
+</div>
+</div>
+
+<div class="section last">
+
+<div>
+
+<div class="text" style="margin-bottom:50px;">
+And somehow, all those little things add up to someone pretty special.
+</div>
+
+<button class="continue" onclick="nextPage()">
+One Last Page ➜
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const sections =
+document.querySelectorAll(".section");
+
+function reveal(){
+
+sections.forEach(section=>{
+
+const top =
+section.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+
+section.classList.add("show");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+function nextPage(){
+
+document.body.classList.add("fade-out");
+
+setTimeout(()=>{
+
+window.location.href="page5.html";
+
+},1500);
+
+}
+
+</script>
+
+</body>
+</html>

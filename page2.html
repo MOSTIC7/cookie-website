@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How We Met ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:#050816;
+    color:white;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+    transition:1.5s;
+}
+
+.fade-out{
+    opacity:0;
+}
+
+.container{
+    text-align:center;
+    padding:80px 20px;
+}
+
+h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#cbd5e1;
+    font-size:1.2rem;
+    margin-bottom:60px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:280px;
+    background:white;
+    border-radius:15px;
+    padding:12px;
+    cursor:pointer;
+    transition:.4s;
+    color:black;
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+.card:nth-child(1){
+    transform:rotate(-4deg);
+}
+
+.card:nth-child(2){
+    transform:rotate(3deg);
+}
+
+.card:nth-child(3){
+    transform:rotate(-2deg);
+}
+
+.card:hover{
+    transform:scale(1.08) rotate(0deg);
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.caption{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.8);
+    z-index:999;
+}
+
+.modal-content{
+    width:90%;
+    max-width:700px;
+    background:#111827;
+    padding:40px;
+    border-radius:20px;
+    animation:pop .4s ease;
+}
+
+.modal-content h2{
+    margin-bottom:20px;
+}
+
+.modal-content p{
+    line-height:1.8;
+    font-size:1.1rem;
+}
+
+.close{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#ff4d6d;
+    color:white;
+}
+
+/* CONTINUE BUTTON */
+
+.continue{
+    margin-top:70px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+    animation:floatButton 3s ease-in-out infinite;
+}
+
+.continue:hover{
+    transform:scale(1.08);
+    box-shadow:
+    0 0 20px #ff4d6d,
+    0 0 40px #ff4d6d,
+    0 0 60px #ff4d6d;
+}
+
+@keyframes floatButton{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📖 How We Met</h1>
+
+<p class="subtitle">
+Every friendship starts with a hello.
+Funny how some hellos end up meaning so much more than expected.
+</p>
+
+<div class="cards">
+
+<div class="card" onclick="openMemory(0)">
+<img src="images/photo1.jpg" alt="">
+<div class="caption">The First Conversation</div>
+</div>
+
+<div class="card" onclick="openMemory(1)">
+<img src="images/photo2.jpg" alt="">
+<div class="caption">The Wallpaper I Made</div>
+</div>
+
+<div class="card" onclick="openMemory(2)">
+<img src="images/photo3.jpg" alt="">
+<div class="caption">One Of My Favorite Memories</div>
+</div>
+
+</div>
+
+<button class="continue" onclick="goToPage3()">
+Continue ➜
+</button>
+
+</div>
+
+<!-- POPUP -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<h2 id="memoryTitle"></h2>
+
+<p id="memoryText"></p>
+
+<button class="close" onclick="closeModal()">
+Close ❤️
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const memories = [
+
+{
+title:"The First Conversation",
+text:`I don't think either of us knew it at the time.
+
+It was just another conversation, another day, another random moment.
+
+But somehow that small moment became the start of countless conversations, jokes, memories and stories that followed.
+
+Looking back now, I'm really glad that conversation happened.`
+},
+
+{
+title:"The Wallpaper I Made",
+text:`Some memories are important because they're meaningful.
+
+Others are important because they're completely ridiculous.
+
+This one makes me feel u r always with me.`
+},
+
+{
+title:"One Of My Favorite Memories",
+text:`My Favorite Memory would be carrying you on my back all around Brookhaven
+It might be not a big deal,but it meant a lot to me.`
+}
+
+];
+
+function openMemory(index){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("memoryTitle").innerText=
+memories[index].title;
+
+document.getElementById("memoryText").innerText=
+memories[index].text;
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+function goToPage3(){
+
+document.body.classList.add("fade-out");
+
+setTimeout(() => {
+
+window.location.href="page3.html";
+
+},1500);
+
+}
+
+</script>
+
+</body>
+</html>
